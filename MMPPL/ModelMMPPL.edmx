@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MMPPLDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ColorMaster">
+          <Key>
+            <PropertyRef Name="ColorId" />
+          </Key>
+          <Property Name="ColorId" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ColorName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustmerMaster">
+          <Key>
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="CustId" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="PhNo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Dispatch">
+          <Key>
+            <PropertyRef Name="DptId" />
+          </Key>
+          <Property Name="DptId" Type="numeric" Precision="18" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="DispatchDate" Type="date" />
+          <Property Name="TruckNo" Type="varchar" MaxLength="50" />
+          <Property Name="DriverName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GradeMaster">
+          <Key>
+            <PropertyRef Name="GradeId" />
+          </Key>
+          <Property Name="GradeId" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GradeName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LabelPrinting">
+          <Key>
+            <PropertyRef Name="LblId" />
+          </Key>
+          <Property Name="LblId" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SizeId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="MicronId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="GradeId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ColorId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="GrossWeight" Type="varchar" MaxLength="50" />
+          <Property Name="NetWeight" Type="varchar" MaxLength="50" />
+          <Property Name="SRNO" Type="varchar" MaxLength="50" />
+          <Property Name="PrintDate" Type="datetime" />
+          <Property Name="DptId" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="MicronMaster">
+          <Key>
+            <PropertyRef Name="MicronId" />
+          </Key>
+          <Property Name="MicronId" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MicronName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SizeMaster">
+          <Key>
+            <PropertyRef Name="SizeId" />
+          </Key>
+          <Property Name="SizeId" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SizeName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MMPPLDB.dbo.DuplicatePrinting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DuplicatePrinting">
+          <Key>
+            <PropertyRef Name="LblId" />
+          </Key>
+          <Property Name="LblId" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="SizeId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SizeName" Type="varchar" MaxLength="50" />
+          <Property Name="MicronId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="MicronName" Type="varchar" MaxLength="50" />
+          <Property Name="GradeId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="GradeName" Type="varchar" MaxLength="50" />
+          <Property Name="ColorId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ColorName" Type="varchar" MaxLength="50" />
+          <Property Name="GrossWeight" Type="varchar" MaxLength="50" />
+          <Property Name="NetWeight" Type="varchar" MaxLength="50" />
+          <Property Name="SRNO" Type="varchar" MaxLength="50" />
+          <Property Name="PrintDate" Type="datetime" />
+          <Property Name="DptId" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MMPPLDB.dbo.StockReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="StockReport">
+          <Key>
+            <PropertyRef Name="EDMXID" />
+          </Key>
+          <Property Name="EDMXID" Type="int" Nullable="false" />
+          <Property Name="SizeId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SizeName" Type="varchar" MaxLength="50" />
+          <Property Name="MicronId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="MicronName" Type="varchar" MaxLength="50" />
+          <Property Name="GradeId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="GradeName" Type="varchar" MaxLength="50" />
+          <Property Name="ColorId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ColorName" Type="varchar" MaxLength="50" />
+          <Property Name="TotalGrossWeight" Type="float" />
+          <Property Name="TotalNetWeight" Type="float" />
+          <Property Name="Quantity" Type="int" />
+        </EntityType>
+        <Association Name="FK_Dispatch_CustmerMaster">
+          <End Role="CustmerMaster" Type="Self.CustmerMaster" Multiplicity="0..1" />
+          <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustmerMaster">
+              <PropertyRef Name="CustId" />
+            </Principal>
+            <Dependent Role="Dispatch">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LabelPrinting_ColorMaster">
+          <End Role="ColorMaster" Type="Self.ColorMaster" Multiplicity="0..1" />
+          <End Role="LabelPrinting" Type="Self.LabelPrinting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ColorMaster">
+              <PropertyRef Name="ColorId" />
+            </Principal>
+            <Dependent Role="LabelPrinting">
+              <PropertyRef Name="ColorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LabelPrinting_Dispatch">
+          <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="0..1" />
+          <End Role="LabelPrinting" Type="Self.LabelPrinting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dispatch">
+              <PropertyRef Name="DptId" />
+            </Principal>
+            <Dependent Role="LabelPrinting">
+              <PropertyRef Name="DptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LabelPrinting_GradeMaster">
+          <End Role="GradeMaster" Type="Self.GradeMaster" Multiplicity="0..1" />
+          <End Role="LabelPrinting" Type="Self.LabelPrinting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GradeMaster">
+              <PropertyRef Name="GradeId" />
+            </Principal>
+            <Dependent Role="LabelPrinting">
+              <PropertyRef Name="GradeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LabelPrinting_MicronMaster">
+          <End Role="MicronMaster" Type="Self.MicronMaster" Multiplicity="0..1" />
+          <End Role="LabelPrinting" Type="Self.LabelPrinting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MicronMaster">
+              <PropertyRef Name="MicronId" />
+            </Principal>
+            <Dependent Role="LabelPrinting">
+              <PropertyRef Name="MicronId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LabelPrinting_SizeMaster">
+          <End Role="SizeMaster" Type="Self.SizeMaster" Multiplicity="0..1" />
+          <End Role="LabelPrinting" Type="Self.LabelPrinting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SizeMaster">
+              <PropertyRef Name="SizeId" />
+            </Principal>
+            <Dependent Role="LabelPrinting">
+              <PropertyRef Name="SizeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MMPPLDBModelStoreContainer">
+          <EntitySet Name="ColorMaster" EntityType="Self.ColorMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustmerMaster" EntityType="Self.CustmerMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dispatch" EntityType="Self.Dispatch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GradeMaster" EntityType="Self.GradeMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LabelPrinting" EntityType="Self.LabelPrinting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MicronMaster" EntityType="Self.MicronMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SizeMaster" EntityType="Self.SizeMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DuplicatePrinting" EntityType="Self.DuplicatePrinting" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DuplicatePrinting].[LblId] AS [LblId], 
+    [DuplicatePrinting].[SizeId] AS [SizeId], 
+    [DuplicatePrinting].[SizeName] AS [SizeName], 
+    [DuplicatePrinting].[MicronId] AS [MicronId], 
+    [DuplicatePrinting].[MicronName] AS [MicronName], 
+    [DuplicatePrinting].[GradeId] AS [GradeId], 
+    [DuplicatePrinting].[GradeName] AS [GradeName], 
+    [DuplicatePrinting].[ColorId] AS [ColorId], 
+    [DuplicatePrinting].[ColorName] AS [ColorName], 
+    [DuplicatePrinting].[GrossWeight] AS [GrossWeight], 
+    [DuplicatePrinting].[NetWeight] AS [NetWeight], 
+    [DuplicatePrinting].[SRNO] AS [SRNO], 
+    [DuplicatePrinting].[PrintDate] AS [PrintDate], 
+    [DuplicatePrinting].[DptId] AS [DptId]
+    FROM [dbo].[DuplicatePrinting] AS [DuplicatePrinting]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="StockReport" EntityType="Self.StockReport" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [StockReport].[EDMXID] AS [EDMXID], 
+    [StockReport].[SizeId] AS [SizeId], 
+    [StockReport].[SizeName] AS [SizeName], 
+    [StockReport].[MicronId] AS [MicronId], 
+    [StockReport].[MicronName] AS [MicronName], 
+    [StockReport].[GradeId] AS [GradeId], 
+    [StockReport].[GradeName] AS [GradeName], 
+    [StockReport].[ColorId] AS [ColorId], 
+    [StockReport].[ColorName] AS [ColorName], 
+    [StockReport].[TotalGrossWeight] AS [TotalGrossWeight], 
+    [StockReport].[TotalNetWeight] AS [TotalNetWeight], 
+    [StockReport].[Quantity] AS [Quantity]
+    FROM [dbo].[StockReport] AS [StockReport]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Dispatch_CustmerMaster" Association="Self.FK_Dispatch_CustmerMaster">
+            <End Role="CustmerMaster" EntitySet="CustmerMaster" />
+            <End Role="Dispatch" EntitySet="Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LabelPrinting_ColorMaster" Association="Self.FK_LabelPrinting_ColorMaster">
+            <End Role="ColorMaster" EntitySet="ColorMaster" />
+            <End Role="LabelPrinting" EntitySet="LabelPrinting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LabelPrinting_Dispatch" Association="Self.FK_LabelPrinting_Dispatch">
+            <End Role="Dispatch" EntitySet="Dispatch" />
+            <End Role="LabelPrinting" EntitySet="LabelPrinting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LabelPrinting_GradeMaster" Association="Self.FK_LabelPrinting_GradeMaster">
+            <End Role="GradeMaster" EntitySet="GradeMaster" />
+            <End Role="LabelPrinting" EntitySet="LabelPrinting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LabelPrinting_MicronMaster" Association="Self.FK_LabelPrinting_MicronMaster">
+            <End Role="MicronMaster" EntitySet="MicronMaster" />
+            <End Role="LabelPrinting" EntitySet="LabelPrinting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LabelPrinting_SizeMaster" Association="Self.FK_LabelPrinting_SizeMaster">
+            <End Role="SizeMaster" EntitySet="SizeMaster" />
+            <End Role="LabelPrinting" EntitySet="LabelPrinting" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MMPPLDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ColorMaster">
+          <Key>
+            <PropertyRef Name="ColorId" />
+          </Key>
+          <Property Name="ColorId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ColorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LabelPrintings" Relationship="Self.FK_LabelPrinting_ColorMaster" FromRole="ColorMaster" ToRole="LabelPrinting" />
+        </EntityType>
+        <EntityType Name="CustmerMaster">
+          <Key>
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="CustId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Dispatches" Relationship="Self.FK_Dispatch_CustmerMaster" FromRole="CustmerMaster" ToRole="Dispatch" />
+        </EntityType>
+        <EntityType Name="Dispatch">
+          <Key>
+            <PropertyRef Name="DptId" />
+          </Key>
+          <Property Name="DptId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DispatchDate" Type="DateTime" Precision="0" />
+          <Property Name="TruckNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DriverName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CustmerMaster" Relationship="Self.FK_Dispatch_CustmerMaster" FromRole="Dispatch" ToRole="CustmerMaster" />
+          <NavigationProperty Name="LabelPrintings" Relationship="Self.FK_LabelPrinting_Dispatch" FromRole="Dispatch" ToRole="LabelPrinting" />
+        </EntityType>
+        <EntityType Name="GradeMaster">
+          <Key>
+            <PropertyRef Name="GradeId" />
+          </Key>
+          <Property Name="GradeId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GradeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LabelPrintings" Relationship="Self.FK_LabelPrinting_GradeMaster" FromRole="GradeMaster" ToRole="LabelPrinting" />
+        </EntityType>
+        <EntityType Name="LabelPrinting">
+          <Key>
+            <PropertyRef Name="LblId" />
+          </Key>
+          <Property Name="LblId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SizeId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MicronId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="GradeId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ColorId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="GrossWeight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NetWeight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SRNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrintDate" Type="DateTime" Precision="3" />
+          <Property Name="DptId" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="ColorMaster" Relationship="Self.FK_LabelPrinting_ColorMaster" FromRole="LabelPrinting" ToRole="ColorMaster" />
+          <NavigationProperty Name="Dispatch" Relationship="Self.FK_LabelPrinting_Dispatch" FromRole="LabelPrinting" ToRole="Dispatch" />
+          <NavigationProperty Name="GradeMaster" Relationship="Self.FK_LabelPrinting_GradeMaster" FromRole="LabelPrinting" ToRole="GradeMaster" />
+          <NavigationProperty Name="MicronMaster" Relationship="Self.FK_LabelPrinting_MicronMaster" FromRole="LabelPrinting" ToRole="MicronMaster" />
+          <NavigationProperty Name="SizeMaster" Relationship="Self.FK_LabelPrinting_SizeMaster" FromRole="LabelPrinting" ToRole="SizeMaster" />
+        </EntityType>
+        <EntityType Name="MicronMaster">
+          <Key>
+            <PropertyRef Name="MicronId" />
+          </Key>
+          <Property Name="MicronId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MicronName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LabelPrintings" Relationship="Self.FK_LabelPrinting_MicronMaster" FromRole="MicronMaster" ToRole="LabelPrinting" />
+        </EntityType>
+        <EntityType Name="SizeMaster">
+          <Key>
+            <PropertyRef Name="SizeId" />
+          </Key>
+          <Property Name="SizeId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SizeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LabelPrintings" Relationship="Self.FK_LabelPrinting_SizeMaster" FromRole="SizeMaster" ToRole="LabelPrinting" />
+        </EntityType>
+        <EntityType Name="DuplicatePrinting">
+          <Key>
+            <PropertyRef Name="LblId" />
+          </Key>
+          <Property Name="LblId" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="SizeId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SizeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MicronId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MicronName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GradeId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="GradeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColorId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ColorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GrossWeight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NetWeight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SRNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrintDate" Type="DateTime" Precision="3" />
+          <Property Name="DptId" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <Association Name="FK_LabelPrinting_ColorMaster">
+          <End Role="ColorMaster" Type="Self.ColorMaster" Multiplicity="0..1" />
+          <End Role="LabelPrinting" Type="Self.LabelPrinting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ColorMaster">
+              <PropertyRef Name="ColorId" />
+            </Principal>
+            <Dependent Role="LabelPrinting">
+              <PropertyRef Name="ColorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dispatch_CustmerMaster">
+          <End Role="CustmerMaster" Type="Self.CustmerMaster" Multiplicity="0..1" />
+          <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustmerMaster">
+              <PropertyRef Name="CustId" />
+            </Principal>
+            <Dependent Role="Dispatch">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LabelPrinting_Dispatch">
+          <End Role="Dispatch" Type="Self.Dispatch" Multiplicity="0..1" />
+          <End Role="LabelPrinting" Type="Self.LabelPrinting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dispatch">
+              <PropertyRef Name="DptId" />
+            </Principal>
+            <Dependent Role="LabelPrinting">
+              <PropertyRef Name="DptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LabelPrinting_GradeMaster">
+          <End Role="GradeMaster" Type="Self.GradeMaster" Multiplicity="0..1" />
+          <End Role="LabelPrinting" Type="Self.LabelPrinting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GradeMaster">
+              <PropertyRef Name="GradeId" />
+            </Principal>
+            <Dependent Role="LabelPrinting">
+              <PropertyRef Name="GradeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LabelPrinting_MicronMaster">
+          <End Role="MicronMaster" Type="Self.MicronMaster" Multiplicity="0..1" />
+          <End Role="LabelPrinting" Type="Self.LabelPrinting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MicronMaster">
+              <PropertyRef Name="MicronId" />
+            </Principal>
+            <Dependent Role="LabelPrinting">
+              <PropertyRef Name="MicronId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LabelPrinting_SizeMaster">
+          <End Role="SizeMaster" Type="Self.SizeMaster" Multiplicity="0..1" />
+          <End Role="LabelPrinting" Type="Self.LabelPrinting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SizeMaster">
+              <PropertyRef Name="SizeId" />
+            </Principal>
+            <Dependent Role="LabelPrinting">
+              <PropertyRef Name="SizeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MMPPLDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ColorMasters" EntityType="Self.ColorMaster" />
+          <EntitySet Name="CustmerMasters" EntityType="Self.CustmerMaster" />
+          <EntitySet Name="Dispatches" EntityType="Self.Dispatch" />
+          <EntitySet Name="GradeMasters" EntityType="Self.GradeMaster" />
+          <EntitySet Name="LabelPrintings" EntityType="Self.LabelPrinting" />
+          <EntitySet Name="MicronMasters" EntityType="Self.MicronMaster" />
+          <EntitySet Name="SizeMasters" EntityType="Self.SizeMaster" />
+          <EntitySet Name="DuplicatePrintings" EntityType="Self.DuplicatePrinting" />
+          <AssociationSet Name="FK_LabelPrinting_ColorMaster" Association="Self.FK_LabelPrinting_ColorMaster">
+            <End Role="ColorMaster" EntitySet="ColorMasters" />
+            <End Role="LabelPrinting" EntitySet="LabelPrintings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dispatch_CustmerMaster" Association="Self.FK_Dispatch_CustmerMaster">
+            <End Role="CustmerMaster" EntitySet="CustmerMasters" />
+            <End Role="Dispatch" EntitySet="Dispatches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LabelPrinting_Dispatch" Association="Self.FK_LabelPrinting_Dispatch">
+            <End Role="Dispatch" EntitySet="Dispatches" />
+            <End Role="LabelPrinting" EntitySet="LabelPrintings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LabelPrinting_GradeMaster" Association="Self.FK_LabelPrinting_GradeMaster">
+            <End Role="GradeMaster" EntitySet="GradeMasters" />
+            <End Role="LabelPrinting" EntitySet="LabelPrintings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LabelPrinting_MicronMaster" Association="Self.FK_LabelPrinting_MicronMaster">
+            <End Role="MicronMaster" EntitySet="MicronMasters" />
+            <End Role="LabelPrinting" EntitySet="LabelPrintings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LabelPrinting_SizeMaster" Association="Self.FK_LabelPrinting_SizeMaster">
+            <End Role="SizeMaster" EntitySet="SizeMasters" />
+            <End Role="LabelPrinting" EntitySet="LabelPrintings" />
+          </AssociationSet>
+          <EntitySet Name="StockReports" EntityType="MMPPLDBModel.StockReport" />
+        </EntityContainer>
+        <EntityType Name="StockReport">
+          <Key>
+            <PropertyRef Name="EDMXID" />
+          </Key>
+          <Property Name="EDMXID" Type="Int32" Nullable="false" />
+          <Property Name="SizeId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SizeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MicronId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MicronName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GradeId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="GradeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColorId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ColorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalGrossWeight" Type="Double" />
+          <Property Name="TotalNetWeight" Type="Double" />
+          <Property Name="Quantity" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MMPPLDBModelStoreContainer" CdmEntityContainer="MMPPLDBEntities">
+          <EntitySetMapping Name="ColorMasters">
+            <EntityTypeMapping TypeName="MMPPLDBModel.ColorMaster">
+              <MappingFragment StoreEntitySet="ColorMaster">
+                <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+                <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustmerMasters">
+            <EntityTypeMapping TypeName="MMPPLDBModel.CustmerMaster">
+              <MappingFragment StoreEntitySet="CustmerMaster">
+                <ScalarProperty Name="CustId" ColumnName="CustId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhNo" ColumnName="PhNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dispatches">
+            <EntityTypeMapping TypeName="MMPPLDBModel.Dispatch">
+              <MappingFragment StoreEntitySet="Dispatch">
+                <ScalarProperty Name="DptId" ColumnName="DptId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="DispatchDate" ColumnName="DispatchDate" />
+                <ScalarProperty Name="TruckNo" ColumnName="TruckNo" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GradeMasters">
+            <EntityTypeMapping TypeName="MMPPLDBModel.GradeMaster">
+              <MappingFragment StoreEntitySet="GradeMaster">
+                <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+                <ScalarProperty Name="GradeName" ColumnName="GradeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LabelPrintings">
+            <EntityTypeMapping TypeName="MMPPLDBModel.LabelPrinting">
+              <MappingFragment StoreEntitySet="LabelPrinting">
+                <ScalarProperty Name="LblId" ColumnName="LblId" />
+                <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+                <ScalarProperty Name="MicronId" ColumnName="MicronId" />
+                <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+                <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="SRNO" ColumnName="SRNO" />
+                <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+                <ScalarProperty Name="DptId" ColumnName="DptId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MicronMasters">
+            <EntityTypeMapping TypeName="MMPPLDBModel.MicronMaster">
+              <MappingFragment StoreEntitySet="MicronMaster">
+                <ScalarProperty Name="MicronId" ColumnName="MicronId" />
+                <ScalarProperty Name="MicronName" ColumnName="MicronName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SizeMasters">
+            <EntityTypeMapping TypeName="MMPPLDBModel.SizeMaster">
+              <MappingFragment StoreEntitySet="SizeMaster">
+                <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+                <ScalarProperty Name="SizeName" ColumnName="SizeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DuplicatePrintings">
+            <EntityTypeMapping TypeName="MMPPLDBModel.DuplicatePrinting">
+              <MappingFragment StoreEntitySet="DuplicatePrinting">
+                <ScalarProperty Name="LblId" ColumnName="LblId" />
+                <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+                <ScalarProperty Name="SizeName" ColumnName="SizeName" />
+                <ScalarProperty Name="MicronId" ColumnName="MicronId" />
+                <ScalarProperty Name="MicronName" ColumnName="MicronName" />
+                <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+                <ScalarProperty Name="GradeName" ColumnName="GradeName" />
+                <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+                <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+                <ScalarProperty Name="GrossWeight" ColumnName="GrossWeight" />
+                <ScalarProperty Name="NetWeight" ColumnName="NetWeight" />
+                <ScalarProperty Name="SRNO" ColumnName="SRNO" />
+                <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+                <ScalarProperty Name="DptId" ColumnName="DptId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StockReports">
+            <EntityTypeMapping TypeName="MMPPLDBModel.StockReport">
+              <MappingFragment StoreEntitySet="StockReport">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TotalNetWeight" ColumnName="TotalNetWeight" />
+                <ScalarProperty Name="TotalGrossWeight" ColumnName="TotalGrossWeight" />
+                <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+                <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+                <ScalarProperty Name="GradeName" ColumnName="GradeName" />
+                <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+                <ScalarProperty Name="MicronName" ColumnName="MicronName" />
+                <ScalarProperty Name="MicronId" ColumnName="MicronId" />
+                <ScalarProperty Name="SizeName" ColumnName="SizeName" />
+                <ScalarProperty Name="SizeId" ColumnName="SizeId" />
+                <ScalarProperty Name="EDMXID" ColumnName="EDMXID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

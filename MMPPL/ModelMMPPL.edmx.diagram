@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="558e26ff033d4de8a69b591599e61990" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="MMPPLDBModel.ColorMaster" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MMPPLDBModel.CustmerMaster" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="MMPPLDBModel.Dispatch" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MMPPLDBModel.GradeMaster" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MMPPLDBModel.LabelPrinting" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MMPPLDBModel.MicronMaster" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="MMPPLDBModel.SizeMaster" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MMPPLDBModel.DuplicatePrinting" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="MMPPLDBModel.FK_LabelPrinting_ColorMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="MMPPLDBModel.FK_Dispatch_CustmerMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="MMPPLDBModel.FK_LabelPrinting_Dispatch" ManuallyRouted="false" />
+        <AssociationConnector Association="MMPPLDBModel.FK_LabelPrinting_GradeMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="MMPPLDBModel.FK_LabelPrinting_MicronMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="MMPPLDBModel.FK_LabelPrinting_SizeMaster" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MMPPLDBModel.StockReport" Width="1.5" PointX="7.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,22 @@
+﻿  public  LabelPrinting()
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.strCon);
+            if(con.State != System.Data.ConnectionState.Open)
+            {
+                con.Open();
+            }
+            string curBatch = DateTime.Today.ToString("ddMMyy");
+            string sqlString = "Select isnull(Max(cast(SUBSTRING ( SRNO ,7,Len(SRNO) ) as int))+1,1) as SRNO from LabelPrinting" +
+                    " where SUBSTRING ( SRNO ,1,6 )='" + curBatch + "'";
+            SqlCommand cmd = new SqlCommand(sqlString,con);
+            int srn = (int)cmd.ExecuteScalar();
+            SRNO = curBatch + srn.ToString("0000");
+            if (con.State == System.Data.ConnectionState.Open)
+            {
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
+            }
+
+            // SRNO= DateTime.Today.ToString("ddMMyy");
+        }

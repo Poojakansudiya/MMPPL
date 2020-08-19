@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D57746B-B0D2-41A8-888C-2F59827AF528}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MMPPL</RootNamespace>
+    <AssemblyName>MMPPL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>C:\Users\hones\Desktop\MMPPL\Application Files\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>987B5C4D7577892AECBCDDE6018DC207558292A1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MMPPL_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Images.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Map.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2.Wizard, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenNETCF.Desktop.Communication">
+      <HintPath>E:\DeviceApplication\Device Dll\OpenNETCF.Desktop.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColorMaster.cs">
+      <DependentUpon>ModelMMPPL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CommonResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DataModel\DbExceptions.cs" />
+    <Compile Include="Common\DataModel\EntityFramework\DbExceptionsConverter.cs" />
+    <Compile Include="Common\DataModel\EntityFramework\DbReadOnlyRepository.cs" />
+    <Compile Include="Common\DataModel\EntityFramework\DbRepository.cs" />
+    <Compile Include="Common\DataModel\EntityFramework\DbUnitOfWork.cs" />
+    <Compile Include="Common\DataModel\EntityFramework\DbUnitOfWorkFactory.cs" />
+    <Compile Include="Common\DataModel\EntityState.cs" />
+    <Compile Include="Common\DataModel\IReadOnlyRepository.cs" />
+    <Compile Include="Common\DataModel\IRepository.cs" />
+    <Compile Include="Common\DataModel\IUnitOfWork.cs" />
+    <Compile Include="Common\DataModel\UnitOfWorkBase.cs" />
+    <Compile Include="Common\LayoutSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>LayoutSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Utils\DbExtensions.cs" />
+    <Compile Include="Common\Utils\ExpressionHelper.cs" />
+    <Compile Include="Common\ViewModel\AddRemoveDetailEntitiesViewModel.cs" />
+    <Compile Include="Common\ViewModel\AddRemoveJunctionDetailEntitiesViewModel.cs" />
+    <Compile Include="Common\ViewModel\CollectionViewModel.cs" />
+    <Compile Include="Common\ViewModel\DocumentManagerServiceExtensions.cs" />
+    <Compile Include="Common\ViewModel\DocumentsViewModel.cs" />
+    <Compile Include="Common\ViewModel\EntitiesViewModel.cs" />
+    <Compile Include="Common\ViewModel\ISingleObjectViewModel.cs" />
+    <Compile Include="Common\ViewModel\LookUpEntitiesViewModel.cs" />
+    <Compile Include="Common\ViewModel\Messages.cs" />
+    <Compile Include="Common\ViewModel\PeekCollectionViewModel.cs" />
+    <Compile Include="Common\ViewModel\PersistentLayoutHelper.cs" />
+    <Compile Include="Common\ViewModel\ReadOnlyCollectionViewModel.cs" />
+    <Compile Include="Common\ViewModel\SingleObjectViewModel.cs" />
+    <Compile Include="CustmerMaster.cs">
+      <DependentUpon>ModelMMPPL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\frmStockDetailReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCode\frmStockDetailReport.Designer.cs">
+      <DependentUpon>frmStockDetailReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dispatch.cs">
+      <DependentUpon>ModelMMPPL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DuplicatePrinting.cs">
+      <DependentUpon>ModelMMPPL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GradeMaster.cs">
+      <DependentUpon>ModelMMPPL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LabelPrinting.cs">
+      <DependentUpon>ModelMMPPL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI.Designer.cs">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicronMaster.cs">
+      <DependentUpon>ModelMMPPL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MMPPLDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MMPPLDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MMPPLDBEntitiesDataModel\IMMPPLDBEntitiesUnitOfWork.cs" />
+    <Compile Include="MMPPLDBEntitiesDataModel\MMPPLDBEntitiesUnitOfWork.cs" />
+    <Compile Include="MMPPLDBEntitiesDataModel\UnitOfWorkSource.cs" />
+    <Compile Include="ModelMMPPL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMMPPL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelMMPPL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMMPPL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelMMPPL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMMPPL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\DispatchReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DispatchReport.Designer.cs">
+      <DependentUpon>DispatchReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LabelPrintCall.cs" />
+    <Compile Include="Report\LabelPrintReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LabelPrintReport.Designer.cs">
+      <DependentUpon>LabelPrintReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SizeMaster.cs">
+      <DependentUpon>ModelMMPPL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockReport.cs">
+      <DependentUpon>ModelMMPPL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ColorMaster\ColorMasterCollectionViewModel.cs" />
+    <Compile Include="ViewModels\ColorMaster\ColorMasterViewModel.cs" />
+    <Compile Include="ViewModels\CustmerMaster\CustmerMasterCollectionViewModel.cs" />
+    <Compile Include="ViewModels\CustmerMaster\CustmerMasterViewModel.cs" />
+    <Compile Include="ViewModels\Dispatch\DispatchCollectionViewModel.cs" />
+    <Compile Include="ViewModels\Dispatch\DispatchViewModel.cs" />
+    <Compile Include="ViewModels\DuplicatePrinting\DuplicatePrintingCollectionViewModel.cs" />
+    <Compile Include="ViewModels\GradeMaster\GradeMasterCollectionViewModel.cs" />
+    <Compile Include="ViewModels\GradeMaster\GradeMasterViewModel.cs" />
+    <Compile Include="ViewModels\LabelPrinting\LabelPrintingCollectionViewModel.cs" />
+    <Compile Include="ViewModels\LabelPrinting\LabelPrintingViewModel.cs" />
+    <Compile Include="ViewModels\MicronMaster\MicronMasterCollectionViewModel.cs" />
+    <Compile Include="ViewModels\MicronMaster\MicronMasterViewModel.cs" />
+    <Compile Include="ViewModels\MMPPLDBEntitiesViewModel.cs" />
+    <Compile Include="ViewModels\SizeMaster\SizeMasterCollectionViewModel.cs" />
+    <Compile Include="ViewModels\SizeMaster\SizeMasterViewModel.cs" />
+    <Compile Include="ViewModels\StockReport\StockReportCollectionViewModel.cs" />
+    <Compile Include="Views\ColorMaster\ColorMasterCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ColorMaster\ColorMasterCollectionView.designer.cs">
+      <DependentUpon>ColorMasterCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ColorMaster\ColorMasterView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ColorMaster\ColorMasterView.designer.cs">
+      <DependentUpon>ColorMasterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustmerMaster\CustmerMasterCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustmerMaster\CustmerMasterCollectionView.designer.cs">
+      <DependentUpon>CustmerMasterCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustmerMaster\CustmerMasterView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustmerMaster\CustmerMasterView.designer.cs">
+      <DependentUpon>CustmerMasterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dispatch\DispatchCall.cs" />
+    <Compile Include="Views\Dispatch\DispatchCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dispatch\DispatchCollectionView.designer.cs">
+      <DependentUpon>DispatchCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dispatch\DispatchView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dispatch\DispatchView.designer.cs">
+      <DependentUpon>DispatchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DuplicatePrinting\DuplicatePrintingCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DuplicatePrinting\DuplicatePrintingCollectionView.designer.cs">
+      <DependentUpon>DuplicatePrintingCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GradeMaster\GradeMasterCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\GradeMaster\GradeMasterCollectionView.designer.cs">
+      <DependentUpon>GradeMasterCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GradeMaster\GradeMasterView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\GradeMaster\GradeMasterView.designer.cs">
+      <DependentUpon>GradeMasterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LabelPrinting\LabelPrintingCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LabelPrinting\LabelPrintingCollectionView.designer.cs">
+      <DependentUpon>LabelPrintingCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LabelPrinting\LabelPrintingView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LabelPrinting\LabelPrintingView.designer.cs">
+      <DependentUpon>LabelPrintingView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MicronMaster\MicronMasterCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MicronMaster\MicronMasterCollectionView.designer.cs">
+      <DependentUpon>MicronMasterCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MicronMaster\MicronMasterView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MicronMaster\MicronMasterView.designer.cs">
+      <DependentUpon>MicronMasterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MMPPLDBEntitiesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MMPPLDBEntitiesView.designer.cs">
+      <DependentUpon>MMPPLDBEntitiesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SizeMaster\SizeMasterCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SizeMaster\SizeMasterCollectionView.designer.cs">
+      <DependentUpon>SizeMasterCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SizeMaster\SizeMasterView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SizeMaster\SizeMasterView.designer.cs">
+      <DependentUpon>SizeMasterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockReport\StockReportCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\StockReport\StockReportCollectionView.designer.cs">
+      <DependentUpon>StockReportCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeightScale\SerialPortManager.cs" />
+    <Compile Include="WeightScale\SerialSettings.cs" />
+    <EmbeddedResource Include="Common\CommonResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCode\frmStockDetailReport.resx">
+      <DependentUpon>frmStockDetailReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI.resx">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report\DispatchReport.resx">
+      <DependentUpon>DispatchReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LabelPrintReport.resx">
+      <DependentUpon>LabelPrintReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ColorMaster\ColorMasterCollectionView.resx">
+      <DependentUpon>ColorMasterCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ColorMaster\ColorMasterView.resx">
+      <DependentUpon>ColorMasterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustmerMaster\CustmerMasterCollectionView.resx">
+      <DependentUpon>CustmerMasterCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustmerMaster\CustmerMasterView.resx">
+      <DependentUpon>CustmerMasterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dispatch\DispatchCollectionView.resx">
+      <DependentUpon>DispatchCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dispatch\DispatchView.resx">
+      <DependentUpon>DispatchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DuplicatePrinting\DuplicatePrintingCollectionView.resx">
+      <DependentUpon>DuplicatePrintingCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GradeMaster\GradeMasterCollectionView.resx">
+      <DependentUpon>GradeMasterCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GradeMaster\GradeMasterView.resx">
+      <DependentUpon>GradeMasterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LabelPrinting\LabelPrintingCollectionView.resx">
+      <DependentUpon>LabelPrintingCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LabelPrinting\LabelPrintingView.resx">
+      <DependentUpon>LabelPrintingView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MicronMaster\MicronMasterCollectionView.resx">
+      <DependentUpon>MicronMasterCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MicronMaster\MicronMasterView.resx">
+      <DependentUpon>MicronMasterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MMPPLDBEntitiesView.resx">
+      <DependentUpon>MMPPLDBEntitiesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SizeMaster\SizeMasterCollectionView.resx">
+      <DependentUpon>SizeMasterCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SizeMaster\SizeMasterView.resx">
+      <DependentUpon>SizeMasterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StockReport\StockReportCollectionView.resx">
+      <DependentUpon>StockReportCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="ModelMMPPL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelMMPPL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Common\LayoutSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>LayoutSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MMPPLDBDataSet.xsc">
+      <DependentUpon>MMPPLDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MMPPLDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MMPPLDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MMPPLDBDataSet.xss">
+      <DependentUpon>MMPPLDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MMPPL_TemporaryKey.pfx" />
+    <None Include="ModelMMPPL.edmx.diagram">
+      <DependentUpon>ModelMMPPL.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CustomCodeFiles\LabelPrintingClass.txt" />
+    <Content Include="ModelMMPPL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMMPPL.edmx</DependentUpon>
+      <LastGenOutput>ModelMMPPL.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelMMPPL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMMPPL.edmx</DependentUpon>
+      <LastGenOutput>ModelMMPPL.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
